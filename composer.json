@@ -1,0 +1,26 @@
+{
+    "name": "seymenkonuk/validator",
+    "description": "Modern PHP uygulamaları için geliştirilmiş şema tabanlı veri doğrulama kütüphanesi. Esnek kural sistemi, iç içe veri yapısı desteği ve zincirlenebilir API ile güçlü ve ölçeklenebilir validasyon çözümleri sunar.",
+    "type": "library",
+    "authors": [
+        {
+            "name": "Recep Seymen Konuk",
+            "email": "konukrecepseymen@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Seymenkonuk\\Validator\\": "src/"
+        }
+    },
+    "require": {},
+    "autoload-dev": {
+        "psr-4": {
+            "Seymenkonuk\\Validator\\Tests\\": "tests/"
+        }
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^11",
+        "phpstan/phpstan": "^2.0"
+    }
+}
