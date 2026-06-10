@@ -2,6 +2,7 @@
     "name": "seymenkonuk/validator",
     "description": "Modern PHP uygulamaları için geliştirilmiş şema tabanlı veri doğrulama kütüphanesi. Esnek kural sistemi, iç içe veri yapısı desteği ve zincirlenebilir API ile güçlü ve ölçeklenebilir validasyon çözümleri sunar.",
     "type": "library",
+    "license": "MIT",
     "authors": [
         {
             "name": "Recep Seymen Konuk",
