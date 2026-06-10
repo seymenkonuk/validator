@@ -1,12 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <phpunit bootstrap="vendor/autoload.php"
-         colors="true"
-         verbose="true"
-         stopOnFailure="false">
+        colors="true"
+        stopOnFailure="false"
+        testdox="true"
+        testdoxSummary="true"
+>
 
     <testsuites>
-        <testsuite name="Tests">
-            <directory>tests</directory>
+        <testsuite name="Localization Test">
+            <directory>tests/Localization</directory>
+        </testsuite>
+        <testsuite name="Validator Test">
+            <directory>tests/Validator</directory>
         </testsuite>
     </testsuites>
 
