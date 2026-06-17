@@ -43,4 +43,14 @@ class IntValidatorTest extends ValidatorTest
         $this->assertTrue($result->passed());
         $this->assertEquals(10, $result->validated());
     }
+
+    public function test_non_strict_int_passes_when_numeric_string_is_given()
+    {
+        $result = $this->validator->field()
+            ->int(false)
+            ->validate("10");
+
+        $this->assertTrue($result->passed());
+        $this->assertEquals(10, $result->validated());
+    }
 }

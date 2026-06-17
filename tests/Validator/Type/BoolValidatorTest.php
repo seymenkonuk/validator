@@ -53,4 +53,14 @@ class BoolValidatorTest extends ValidatorTest
         $this->assertTrue($result->passed());
         $this->assertEquals(true, $result->validated());
     }
+
+    public function test_non_strict_bool_passes_when_boolean_string_is_given()
+    {
+        $result = $this->validator->field()
+            ->bool(false)
+            ->validate("true");
+
+        $this->assertTrue($result->passed());
+        $this->assertEquals(true, $result->validated());
+    }
 }

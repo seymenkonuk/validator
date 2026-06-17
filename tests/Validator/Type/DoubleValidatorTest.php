@@ -43,4 +43,14 @@ class DoubleValidatorTest extends ValidatorTest
         $this->assertTrue($result->passed());
         $this->assertEquals(123.45, $result->validated());
     }
+
+    public function test_non_strict_double_passes_when_numeric_string_is_given()
+    {
+        $result = $this->validator->field()
+            ->double(false)
+            ->validate("10.34");
+
+        $this->assertTrue($result->passed());
+        $this->assertEquals(10.34, $result->validated());
+    }
 }
