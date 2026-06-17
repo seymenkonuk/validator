@@ -22,6 +22,7 @@ class BoolValidator extends BaseValidator
     private ?bool $defaultValue = null;
     private bool $isRequired = false;
     private bool $isNullable = false;
+    private bool $strict = false;
 
     private ?bool $expected = null;
 
@@ -38,6 +39,12 @@ class BoolValidator extends BaseValidator
     public function false(): self
     {
         $this->expected = false;
+        return $this;
+    }
+
+    public function strict(): self
+    {
+        $this->strict = true;
         return $this;
     }
 
@@ -89,10 +96,16 @@ class BoolValidator extends BaseValidator
             return $this->success(null);
         }
 
-        // Bu Alan Boolean Olmalı
-        if (!is_bool($data)) {
+        // Data Değişkeni Bir Boolean Olmak Zorunda
+        if ($this->strict && !is_bool($data)) {
             return $this->error("boolean");
         }
+
+        // Data Değişkeni Bir Boolean Olmak Zorunda
+        if (!$this->strict && !($data === "true" || $data === "false")) {
+            return $this->error("boolean");
+        }
+        $data = ($data === true) || ($data === "true");
 
         // Bu Alan Expected Value Olmalı
         if ($this->expected !== null && $data !== $this->expected) {

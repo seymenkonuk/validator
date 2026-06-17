@@ -34,19 +34,37 @@ class FieldValidator
     // TYPE VALIDATORS
     // --------------------------------------------------------------------------
 
-    public function int(): IntValidator
+    public function int(bool $strict = true): IntValidator
     {
-        return new IntValidator($this->translator);
+        $validator = new IntValidator($this->translator);
+
+        if (!$strict) {
+            return $validator;
+        }
+
+        return $validator->strict();
     }
 
-    public function double(): DoubleValidator
+    public function double(bool $strict = true): DoubleValidator
     {
-        return new DoubleValidator($this->translator);
+        $validator = new DoubleValidator($this->translator);
+
+        if (!$strict) {
+            return $validator;
+        }
+
+        return $validator->strict();
     }
 
-    public function bool(): BoolValidator
+    public function bool(bool $strict = true): BoolValidator
     {
-        return new BoolValidator($this->translator);
+        $validator = new BoolValidator($this->translator);
+
+        if (!$strict) {
+            return $validator;
+        }
+
+        return $validator->strict();
     }
 
     public function datetime(): DateTimeValidator

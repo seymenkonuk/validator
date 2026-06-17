@@ -22,6 +22,7 @@ class DoubleValidator extends BaseValidator
     private float|null $defaultValue = null;
     private bool $isRequired = false;
     private bool $isNullable = false;
+    private bool $strict = false;
 
     private float $min = PHP_FLOAT_MIN;
     private float $max = PHP_FLOAT_MAX;
@@ -39,6 +40,12 @@ class DoubleValidator extends BaseValidator
     public function max(float $max): self
     {
         $this->max = $max;
+        return $this;
+    }
+
+    public function strict(): self
+    {
+        $this->strict = true;
         return $this;
     }
 
@@ -91,9 +98,16 @@ class DoubleValidator extends BaseValidator
         }
 
         // Data Değişkeni Bir Float Olmak Zorunda
-        if (!is_float($data)) {
+        if ($this->strict && !is_float($data)) {
             return $this->error("float");
         }
+
+        // Data Değişkeni Bir Float Olmak Zorunda
+        if (!$this->strict && filter_var($data, FILTER_VALIDATE_FLOAT) === false) {
+            return $this->error("float");
+        }
+        /** @phpstan-ignore-next-line */
+        $data = (float)$data;
 
         // Veri Tam Olarak Bu Değer Olmalı
         if ($this->min === $this->max && $data !== $this->min) {

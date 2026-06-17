@@ -22,6 +22,7 @@ class IntValidator extends BaseValidator
     private int|null $defaultValue = null;
     private bool $isRequired = false;
     private bool $isNullable = false;
+    private bool $strict = false;
 
     private int $min = PHP_INT_MIN;
     private int $max = PHP_INT_MAX;
@@ -39,6 +40,12 @@ class IntValidator extends BaseValidator
     public function max(int $max): self
     {
         $this->max = $max;
+        return $this;
+    }
+
+    public function strict(): self
+    {
+        $this->strict = true;
         return $this;
     }
 
@@ -105,9 +112,16 @@ class IntValidator extends BaseValidator
         }
 
         // Data Değişkeni Bir Int Olmak Zorunda
-        if (!is_int($data)) {
+        if ($this->strict && !is_int($data)) {
             return $this->error("integer");
         }
+
+        // Data Değişkeni Bir Int Olmak Zorunda
+        if (!$this->strict && filter_var($data, FILTER_VALIDATE_INT) === false) {
+            return $this->error("integer");
+        }
+        /** @phpstan-ignore-next-line */
+        $data = (int)$data;
 
         // Veri Tam Olarak Bu Sayı Olmalı
         if ($this->min === $this->max && $data !== $this->min) {
