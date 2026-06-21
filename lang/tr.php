@@ -23,6 +23,7 @@ return [
     // Metin formatları
     'email' => 'Bu alan geçerli bir e-posta adresi olmalıdır!',
     'url' => 'Bu alan geçerli bir URL olmalıdır!',
+    'path' => 'Bu alan geçerli bir path olmalıdır!',
     'uuid' => 'Bu alan geçerli bir UUID olmalıdır!',
     'slug' => 'Bu alan geçerli bir slug değeri olmalıdır!',
     'alpha' => 'Bu alan yalnızca harflerden oluşmalıdır!',

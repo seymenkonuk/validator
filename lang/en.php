@@ -23,6 +23,7 @@ return [
     // String formats
     'email' => 'This field must be a valid email address!',
     'url' => 'This field must be a valid URL!',
+    'path' => 'This field must be a valid path!',
     'uuid' => 'This field must be a valid UUID!',
     'slug' => 'This field must be a valid slug!',
     'alpha' => 'This field may only contain letters!',

@@ -81,6 +81,14 @@ class StringValidator extends BaseValidator
         );
     }
 
+    public function path(): self
+    {
+        return $this->regex(
+            "/^\/[^\s]*$/",
+            $this->translator->get("path"),
+        );
+    }
+
     public function uuid(): self
     {
         return $this->regex(
