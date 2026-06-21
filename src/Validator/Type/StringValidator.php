@@ -71,7 +71,12 @@ class StringValidator extends BaseValidator
     public function url(): self
     {
         return $this->regex(
-            "/^https?:\/\/(?:www\.)?[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)+(?:\/[^\s]*)?$/",
+            // http:// ya da https:// ile başla
+            // istediğin kadar alt domain içersin: domain1.domain2.domain3.
+            // en az iki karakterli TLD: com / tr vb.
+            // isteğe bağlı port numarası: :80 gibi
+            // issteğe bağlı path bilgisi: /path?query=value#section
+            "/^https?:\/\/(?:[a-zA-Z0-9-]+\.)+[a-zA-Z]{2,}(?::\d+)?(?:\/[^\s]*)?$/",
             $this->translator->get("url"),
         );
     }
