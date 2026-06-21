@@ -121,6 +121,11 @@ class FieldValidator
         return $this->string()->url();
     }
 
+    public function path(): StringValidator
+    {
+        return $this->string()->path();
+    }
+
     public function uuid(): StringValidator
     {
         return $this->string()->uuid();
