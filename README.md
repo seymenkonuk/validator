@@ -85,13 +85,12 @@ $result = $schema->validate([
 
 if ($result->passed()) {
     var_dump($result->validated());
-}
-
-else {
-// if ($result->failed()) {
+} else {
     var_dump($result->errors());
 }
 ```
+
+> 💡 **Not:** $result->failed(), !$result->passed() ile tamamen eşdeğerdir; yalnızca okunabilirliği artırmak için sağlanmıştır.
 
 ### Nested Şema
 ```php
