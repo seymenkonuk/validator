@@ -6,7 +6,7 @@
 // Licensed under the terms of the LICENSE file in the project root directory.
 // ============================================================================
 
-namespace Seymenkonuk\Validator\Tests\Language;
+namespace Seymenkonuk\Validator\Tests\Localization;
 
 
 use PHPUnit\Framework\TestCase;

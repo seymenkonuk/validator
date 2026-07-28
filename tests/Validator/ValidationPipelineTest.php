@@ -6,7 +6,7 @@
 // Licensed under the terms of the LICENSE file in the project root directory.
 // ============================================================================
 
-namespace Seymenkonuk\Validator\Tests\Rules\Type;
+namespace Seymenkonuk\Validator\Tests\Validator;
 
 
 use Seymenkonuk\Validator\Tests\Abstract\ValidatorTest;
