@@ -18,6 +18,7 @@ use Seymenkonuk\Validator\Validator\Type\DoubleValidator;
 use Seymenkonuk\Validator\Validator\Type\EnumValidator;
 use Seymenkonuk\Validator\Validator\Type\IntValidator;
 use Seymenkonuk\Validator\Validator\Type\StringValidator;
+use Seymenkonuk\Validator\Validator\Type\UploadedFileValidator;
 
 
 class FieldValidator
@@ -80,6 +81,11 @@ class FieldValidator
     public function enum(): EnumValidator
     {
         return new EnumValidator($this->translator);
+    }
+
+    public function uploaded(): UploadedFileValidator
+    {
+        return new UploadedFileValidator($this->translator);
     }
 
     private function _custom(): CustomValidator

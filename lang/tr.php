@@ -19,6 +19,7 @@ return [
     'string' => 'Bu alan bir metin olmalıdır!',
     'array' => 'Bu alan bir dizi olmalıdır!',
     'datetime' => 'Bu alan geçerli bir tarih ve saat olmalıdır!',
+    'file' => 'Bu alan geçerli bir dosya olmalıdır!',
 
     // Metin formatları
     'email' => 'Bu alan geçerli bir e-posta adresi olmalıdır!',
@@ -58,4 +59,12 @@ return [
     'length' => 'Bu alan tam olarak {length} karakter olmalıdır!',
     'min_length' => 'Bu alan en az {length} karakter olmalıdır!',
     'max_length' => 'Bu alan en fazla {length} karakter olmalıdır!',
+
+    // Dosya
+    'file_error' => 'Dosya yüklenirken bir hata oluştu!',
+    'file_size_equals' => 'Dosya boyutu tam olarak {value} olmalıdır!',
+    'file_size_min' => 'Dosya boyutu en az {value} olmalıdır!',
+    'file_size_max' => 'Dosya boyutu en fazla {value} olmalıdır!',
+    'file_extension' => 'Dosya uzantısı izin verilen uzantılardan biri olmalıdır: {values}.',
+    'file_mime_type' => 'Dosya türü izin verilen MIME türlerinden biri olmalıdır: {values}.',
 ];
