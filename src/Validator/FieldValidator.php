@@ -16,6 +16,7 @@ use Seymenkonuk\Validator\Validator\Type\CustomValidator;
 use Seymenkonuk\Validator\Validator\Type\DateTimeValidator;
 use Seymenkonuk\Validator\Validator\Type\DoubleValidator;
 use Seymenkonuk\Validator\Validator\Type\EnumValidator;
+use Seymenkonuk\Validator\Validator\Type\FileValidator;
 use Seymenkonuk\Validator\Validator\Type\IntValidator;
 use Seymenkonuk\Validator\Validator\Type\StringValidator;
 use Seymenkonuk\Validator\Validator\Type\UploadedFileValidator;
@@ -86,6 +87,11 @@ class FieldValidator
     public function uploaded(): UploadedFileValidator
     {
         return new UploadedFileValidator($this->translator);
+    }
+
+    public function file(): FileValidator
+    {
+        return new FileValidator($this->translator);
     }
 
     private function _custom(): CustomValidator
