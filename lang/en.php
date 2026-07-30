@@ -62,9 +62,9 @@ return [
 
     // File
     'file_error' => 'The file could not be uploaded!',
-    'file_size_equals' => 'The file size must be exactly {value}!',
-    'file_size_min' => 'The file size must be at least {value}!',
-    'file_size_max' => 'The file size may not be greater than {value}!',
+    'file_size_equals' => 'The file size must be exactly {value} bytes!',
+    'file_size_min' => 'The file size must be at least {value} bytes!',
+    'file_size_max' => 'The file size may not be greater than {value} bytes!',
     'file_extension' => 'The file extension must be one of: {values}.',
     'file_mime_type' => 'The file MIME type must be one of: {values}.',
 ];

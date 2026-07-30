@@ -62,9 +62,9 @@ return [
 
     // Dosya
     'file_error' => 'Dosya yüklenirken bir hata oluştu!',
-    'file_size_equals' => 'Dosya boyutu tam olarak {value} olmalıdır!',
-    'file_size_min' => 'Dosya boyutu en az {value} olmalıdır!',
-    'file_size_max' => 'Dosya boyutu en fazla {value} olmalıdır!',
+    'file_size_equals' => 'Dosya boyutu tam olarak {value} byte olmalıdır!',
+    'file_size_min' => 'Dosya boyutu en az {value} byte olmalıdır!',
+    'file_size_max' => 'Dosya boyutu en fazla {value} byte olmalıdır!',
     'file_extension' => 'Dosya uzantısı izin verilen uzantılardan biri olmalıdır: {values}.',
     'file_mime_type' => 'Dosya türü izin verilen MIME türlerinden biri olmalıdır: {values}.',
 ];
