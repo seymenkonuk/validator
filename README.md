@@ -13,6 +13,8 @@ Modern PHP uygulamaları için geliştirilmiş fluent API tabanlı, şema odakl�
 - Varsayılan değerler
 - Güçlü tip doğrulama
 - Tarih ve zaman doğrulamaları
+- $_FILES verileri için dosya doğrulama
+- File interface'i için dosya doğrulama
 - Çoklu dil (i18n) desteği
 - Özelleştirilebilir çeviri sistemi
 - Detaylı hata raporlama
@@ -110,6 +112,40 @@ $schema = $validator->object()->schema([
         ->minItems(0)
         ->maxItems(10)
         ->default([]),
+]);
+```
+
+### Dosya Doğrulama
+PHP tarafından `$_FILES` içerisinde oluşturulan dosya dizilerini doğrulamak için:
+```php
+$schema = $validator->object()->schema([
+    "image_file" => $validator->field()
+        ->uploaded()
+        ->mimes(["image/jpeg", "image/png", "image/gif"])
+        ->extensions(["jpg", "jpeg", "png", "gif"])
+        ->min(1 * 1024)
+        ->max(100 * 1024 * 1024)
+        ->required(),
+]);
+
+$result = $schema->validate($_FILES);
+```
+
+`File` interface'ini uygulayan dosya nesnelerini doğrulamak için:
+
+```php
+$schema = $validator->object()->schema([
+    "image_file" => $validator->field()
+        ->file()
+        ->mimes(["image/jpeg", "image/png", "image/gif"])
+        ->extensions(["jpg", "jpeg", "png", "gif"])
+        ->min(1 * 1024)
+        ->max(100 * 1024 * 1024)
+        ->required(),
+]);
+
+$result = $schema->validate([
+    "image_file" => $file
 ]);
 ```
 
