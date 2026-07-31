@@ -9,12 +9,9 @@
 namespace Seymenkonuk\Validator\Validator\Type;
 
 
-interface File
-{
-    public function isValid(): bool;
-    public function getName(): string;
-    public function getTmpPath(): string;
-    public function getSize(): int;
-    public function getExtension(): string;
-    public function getMimeType(): string;
-}
+use Seymenkonuk\Validator\Contract\IFile;
+
+/**
+ * @deprecated Use Seymenkonuk\Validator\Contract\IFile instead.
+ */
+interface File extends IFile {}

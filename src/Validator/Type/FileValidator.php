@@ -9,6 +9,7 @@
 namespace Seymenkonuk\Validator\Validator\Type;
 
 
+use Seymenkonuk\Validator\Contract\IFile;
 use Seymenkonuk\Validator\Validator\BaseValidator;
 use Seymenkonuk\Validator\Validator\ValidationResult;
 
@@ -117,7 +118,7 @@ class FileValidator extends BaseValidator
         }
 
         // Dosya Türünde Olmalı
-        if (!($data instanceof File)) {
+        if (!($data instanceof IFile)) {
             return $this->error("file");
         }
 
